@@ -59,7 +59,7 @@
 
 @layer base {
   body {
-    @apply h-full bg-white  leading-none font-normal not-italic;
+    @apply h-screen bg-white  leading-none font-normal not-italic;
   }
   h1,
   h2,

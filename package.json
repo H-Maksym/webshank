@@ -35,6 +35,7 @@
     "open-cli": "^7.2.0",
     "react-svg-loader": "^3.0.3",
     "svg-react-loader": "^0.4.6",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack": "^5.86.0"
   }
 }

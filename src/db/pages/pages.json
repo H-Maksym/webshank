@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Services",
+    "path": "/services",
+    "ariaLabel": "Link to page services"
+  },
+  {
+    "title": "About Me",
+    "path": "/about-me",
+    "ariaLabel": "Link to page about us"
+  },
+  {
+    "title": "Contacts",
+    "path": "/contacts",
+    "ariaLabel": "Link to page contacts"
+  }
+]

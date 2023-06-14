@@ -1,8 +1,8 @@
-import "@/app/style/globals.css";
+import "@/style/globals.css";
 import { Inter } from "next/font/google";
-import Header from "@/app/components/Header";
-import Main from "@/app/components/Main";
-import Footer from "@/app/components/Footer";
+import Header from "@/components/Header";
+import Main from "@/components/Main";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
+      <body className={`${inter.className}`}>
+        <div className="flex flex-col min-h-full">
+          <Header />
+          <Main>{children}</Main>
+          <Footer />
+        </div>
+        <div id="modal-root" />
       </body>
     </html>
   );

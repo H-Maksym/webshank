@@ -4,10 +4,12 @@ interface IMainProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-const Main: FC<IMainProps> = ({ children }) => {
+const Main: FC<IMainProps> = ({ children, className }) => {
   return (
     <>
-      <main className="flex min-h-screen h-screen flex-col">{children}</main>
+      <main className={["flex-auto mt-[--h-header]", className].join(" ")}>
+        {children}
+      </main>
     </>
   );
 };

@@ -5,7 +5,7 @@ interface IFooterProps {}
 const Footer: FC<IFooterProps> = () => {
   return (
     <>
-      <div>Footer</div>
+      <footer className="bg-pink-400">Footer</footer>
     </>
   );
 };
