@@ -1,13 +1,20 @@
-import { FC, ReactNode } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 
-interface IContainerProps {
+interface IContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-const Container: FC<IContainerProps> = ({ children }) => {
+const Container: FC<IContainerProps> = ({ children, className }) => {
   return (
     <>
-      <div>{children}</div>
+      <div
+        className={[
+          "w-full max-w-[1440px] mx-auto my-0 px-4 md:px-8",
+          className,
+        ].join(" ")}
+      >
+        {children}
+      </div>
     </>
   );
 };
