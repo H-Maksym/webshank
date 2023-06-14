@@ -1,7 +1,15 @@
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
+import Heading from "@/components/common/Heading";
+
 const AboutMe = () => {
   return (
     <>
-      <div>About-Me Page</div>
+      <Container>
+        <Section>
+          <Heading headingLevel="h1">About ME</Heading>
+        </Section>
+      </Container>
     </>
   );
 };

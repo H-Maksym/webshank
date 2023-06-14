@@ -1,11 +1,15 @@
-import { FC } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 
-interface ISectionProps {}
+interface ISectionProps extends HTMLAttributes<HTMLElement> {
+  children: ReactNode;
+}
 
-const Section: FC<ISectionProps> = () => {
+const Section: FC<ISectionProps> = ({ children, className }) => {
   return (
     <>
-      <div>Section</div>
+      <section className={["w-full py-4 md:py-8", className].join(" ")}>
+        {children}
+      </section>
     </>
   );
 };

@@ -1,17 +1,22 @@
 [
   {
+    "title": "Home",
+    "path": "/",
+    "ariaLabel": "Link to home page"
+  },
+  {
     "title": "Services",
     "path": "/services",
-    "ariaLabel": "Link to page services"
+    "ariaLabel": "Link to services page "
   },
   {
     "title": "About Me",
     "path": "/about-me",
-    "ariaLabel": "Link to page about us"
+    "ariaLabel": "Link to about-me page "
   },
   {
     "title": "Contacts",
     "path": "/contacts",
-    "ariaLabel": "Link to page contacts"
+    "ariaLabel": "Link to contacts page"
   }
 ]
