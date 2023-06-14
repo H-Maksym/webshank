@@ -10,13 +10,13 @@ const Navbar: FC<INavbarProps> = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="card-set justify-center [--card-gap:10px]">
           {pages.map(({ title, path, ariaLabel }: NavMenuType) => (
             <li key={title}>
               <Link
                 href={path}
                 aria-label={ariaLabel}
-                className="custom-link custom-link-hover"
+                className="card-item custom-link custom-link-hover"
               >
                 {title}
               </Link>

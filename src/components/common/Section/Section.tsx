@@ -1,11 +1,13 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-interface ISectionProps {}
+interface ISectionProps {
+  children: ReactNode;
+}
 
-const Section: FC<ISectionProps> = () => {
+const Section: FC<ISectionProps> = ({ children }) => {
   return (
     <>
-      <div>Section</div>
+      <div>{children}</div>
     </>
   );
 };

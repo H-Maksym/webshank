@@ -1,11 +1,13 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-interface IContainerProps {}
+interface IContainerProps {
+  children: ReactNode;
+}
 
-const Container: FC<IContainerProps> = () => {
+const Container: FC<IContainerProps> = ({ children }) => {
   return (
     <>
-      <div>Container</div>
+      <div>{children}</div>
     </>
   );
 };
