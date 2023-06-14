@@ -1,11 +1,14 @@
 import { FC } from "react";
+import Navbar from "@/components/Navbar";
 
 interface IHeaderProps {}
 
 const Header: FC<IHeaderProps> = () => {
   return (
     <>
-      <div>Header</div>
+      <header className="bg-red-400">
+        <Navbar />
+      </header>
     </>
   );
 };
