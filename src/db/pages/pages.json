@@ -15,6 +15,11 @@
     "ariaLabel": "Link to about-me page "
   },
   {
+    "title": "Blog",
+    "path": "/blog",
+    "ariaLabel": "Link to Blog page "
+  },
+  {
     "title": "Contacts",
     "path": "/contacts",
     "ariaLabel": "Link to contacts page"
