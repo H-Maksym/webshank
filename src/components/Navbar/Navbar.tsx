@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NavMenuType } from "../../types/index";
+import { NavMenuType } from "@/types/index";
 import Link from "next/link";
 
 import pages from "@/db/pages/pages.json";
