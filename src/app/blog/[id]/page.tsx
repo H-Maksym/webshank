@@ -1,9 +1,13 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import { BiArrowBack } from "react-icons/bi";
+
+import { PostType } from "@/types";
+import { getPostById } from "@/utils/api";
+
 import Container from "@/components/common/Container";
 import Heading from "@/components/common/Heading";
 import Section from "@/components/common/Section";
-import { PostType } from "@/types";
-import { getPostById } from "@/utils/api";
 
 interface IBlogIDProps {
   params: {
@@ -14,8 +18,10 @@ interface IBlogIDProps {
 export const generateMetadata = async ({
   params: { id },
 }: IBlogIDProps): Promise<Metadata> => {
+  const post: PostType = await getPostById(id);
+
   return {
-    title: id,
+    title: post.title,
   };
 };
 
@@ -26,7 +32,16 @@ const BlogID = async ({ params: { id } }: IBlogIDProps) => {
     <Container>
       <Section>
         {!post.id && <p>Nothing found...</p>}
-        <Heading headingLevel="h2">{post.title}</Heading>
+        <Link
+          href="/blog"
+          className="card-item custom-link custom-link-hover w-40"
+        >
+          <BiArrowBack width={5} />
+          Back
+        </Link>
+        <Heading headingLevel="h2" className="mt-5">
+          {post.title}
+        </Heading>
         <p>{post.body}</p>
       </Section>
     </Container>
