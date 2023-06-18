@@ -7,6 +7,7 @@ import Posts from "@/components/Posts/Posts";
 
 import { PostType } from "@/types";
 import { getPosts } from "@/utils/api";
+import PostsSearch from "@/components/PostsSearch/PostsSearch";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -25,6 +26,7 @@ const Blog = () => {
   return (
     <>
       <Heading headingLevel="h2">All Blogs</Heading>
+      <PostsSearch onSearch={setPosts} />
       {loading ? (
         <Heading headingLevel="h3">Loading...</Heading>
       ) : (
