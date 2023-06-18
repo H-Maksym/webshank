@@ -1,39 +1,22 @@
-"use client";
 import { Metadata } from "next";
-import { useEffect, useState } from "react";
-
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
 import Heading from "@/components/common/Heading";
-import Posts from "@/components/Posts/Posts";
-import PostsSearch from "@/components/PostsSearch";
-
-import { PostType } from "@/types";
-import { getPosts } from "@/utils/api";
+import Blog from "@/components/Pages/Blog";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-const Blog = () => {
-  const [posts, setPosts] = useState<PostType[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    getPosts()
-      .then(setPosts)
-      .finally(() => setLoading(false));
-  }, []);
-
+const BlogPage = () => {
   return (
-    <>
-      <Heading headingLevel="h2">All Blogs</Heading>
-      <PostsSearch onSearch={setPosts} />
-      {loading ? (
-        <Heading headingLevel="h3">Loading...</Heading>
-      ) : (
-        <Posts posts={posts} />
-      )}
-    </>
+    <Container>
+      <Section>
+        <Heading headingLevel="h2">All Blogs</Heading>
+        <Blog />
+      </Section>
+    </Container>
   );
 };
 
-export default Blog;
+export default BlogPage;

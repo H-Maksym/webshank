@@ -18,7 +18,7 @@ const PostsSearch: FC<IPostsSearchProps> = ({ onSearch }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex justify-center">
+      <form onSubmit={handleSubmit} className="flex justify-center my-5">
         <input
           type="search"
           placeholder="Search"
