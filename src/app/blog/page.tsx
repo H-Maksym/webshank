@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 import Heading from "@/components/common/Heading";
 import Posts from "@/components/Posts/Posts";
+import PostsSearch from "@/components/PostsSearch";
 
 import { PostType } from "@/types";
 import { getPosts } from "@/utils/api";
-import PostsSearch from "@/components/PostsSearch/PostsSearch";
 
 export const metadata: Metadata = {
   title: "Blog",
