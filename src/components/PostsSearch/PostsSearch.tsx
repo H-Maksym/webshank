@@ -1,19 +1,16 @@
 "use client";
-import { PostType } from "@/types";
-import { getPostBySearch } from "@/utils/api";
+import { usePosts } from "@/store";
 import { FC, useState, FormEventHandler } from "react";
 
-interface IPostsSearchProps {
-  onSearch: (value: PostType[]) => void;
-}
+interface IPostsSearchProps {}
 
-const PostsSearch: FC<IPostsSearchProps> = ({ onSearch }) => {
+const PostsSearch: FC<IPostsSearchProps> = () => {
   const [search, setSearch] = useState<string>("");
+  const getPostBySearch = usePosts((state) => state.getPostBySearch);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const posts = await getPostBySearch(search);
-    onSearch(posts);
+    await getPostBySearch(search);
   };
 
   return (

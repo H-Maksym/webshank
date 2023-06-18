@@ -1,26 +1,39 @@
-import { FC } from "react";
+"use client";
+import { FC, useEffect } from "react";
 import Link from "next/link";
+import { shallow } from "zustand/shallow";
+import { usePosts } from "@/store";
+import { PostType } from "@/types";
 
 import Heading from "@/components/common/Heading";
 
-import { PostType } from "@/types";
+interface IPostsProps {}
 
-interface IPostsProps {
-  posts: PostType[];
-}
+const Posts: FC<IPostsProps> = () => {
+  const [posts, loading, getPosts] = usePosts(
+    (state) => [state.posts, state.loading, state.getPosts],
+    shallow
+  );
 
-const Posts: FC<IPostsProps> = ({ posts }) => {
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
+
   return (
     <>
-      <ul className="list-disc card-set flex-col [--card-gap:10px]">
-        {posts.map(({ id, title }: PostType) => (
-          <li key={id} className="card-item">
-            <Link href={`/blog/${id}`}>
-              <Heading headingLevel="h3">{title}</Heading>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <Heading headingLevel="h3">Loading...</Heading>
+      ) : (
+        <ul className="list-disc card-set flex-col [--card-gap:10px]">
+          {posts.map(({ id, title }: PostType) => (
+            <li key={id} className="card-item">
+              <Link href={`/blog/${id}`}>
+                <Heading headingLevel="h3">{title}</Heading>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 };

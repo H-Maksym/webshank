@@ -30,7 +30,7 @@ export const getPostById = async (id: string) => {
 };
 
 //INFO GET Posts by search
-export const getPostBySearch = async (search: string) => {
+export const getPostsBySearch = async (search: string) => {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts?q=${search}`,
     {
