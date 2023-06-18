@@ -1,27 +1,27 @@
 [
   {
     "title": "Home",
-    "path": "/",
+    "href": "/",
     "ariaLabel": "Link to home page"
   },
   {
     "title": "Services",
-    "path": "/services",
+    "href": "/services",
     "ariaLabel": "Link to services page "
   },
   {
     "title": "About Me",
-    "path": "/about-me",
+    "href": "/about-me",
     "ariaLabel": "Link to about-me page "
   },
   {
     "title": "Blog",
-    "path": "/blog",
+    "href": "/blog",
     "ariaLabel": "Link to Blog page "
   },
   {
     "title": "Contacts",
-    "path": "/contacts",
+    "href": "/contacts",
     "ariaLabel": "Link to contacts page"
   }
 ]
