@@ -15,11 +15,11 @@ interface IBlogIDProps {
   };
 }
 
+//INFO SEO for dynamic page's
 export const generateMetadata = async ({
   params: { id },
 }: IBlogIDProps): Promise<Metadata> => {
   const post: PostType = await getPostById(id);
-
   return {
     title: post.title,
   };

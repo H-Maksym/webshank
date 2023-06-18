@@ -1,28 +1,37 @@
+"use client";
 import { Metadata } from "next";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import Heading from "@/components/common/Heading";
+import Posts from "@/components/Posts/Posts";
+
 import { PostType } from "@/types";
 import { getPosts } from "@/utils/api";
+import PostsSearch from "@/components/PostsSearch/PostsSearch";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-const Blog = async () => {
-  const posts = await getPosts();
+const Blog = () => {
+  const [posts, setPosts] = useState<PostType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    getPosts()
+      .then(setPosts)
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <>
       <Heading headingLevel="h2">All Blogs</Heading>
-      <ul className="list-disc card-set flex-col [--card-gap:10px]">
-        {posts.map(({ id, title }: PostType) => (
-          <li key={id} className="card-item">
-            <Link href={`/blog/${id}`}>
-              <Heading headingLevel="h3">{title}</Heading>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <PostsSearch onSearch={setPosts} />
+      {loading ? (
+        <Heading headingLevel="h3">Loading...</Heading>
+      ) : (
+        <Posts posts={posts} />
+      )}
     </>
   );
 };
