@@ -1,16 +1,20 @@
 "use client";
-import { usePosts } from "@/store";
+// import { usePosts } from "@/store";
 import { FC, useState, FormEventHandler } from "react";
+import useSWR from "swr";
+import { getPostsBySearch } from "@/utils/api";
 
 interface IPostsSearchProps {}
 
 const PostsSearch: FC<IPostsSearchProps> = () => {
+  const { mutate } = useSWR("posts");
   const [search, setSearch] = useState<string>("");
-  const getPostBySearch = usePosts((state) => state.getPostBySearch);
+  // const getPostsBySearch = usePosts((state) => state.getPostBySearch);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    await getPostBySearch(search);
+    const posts = await getPostsBySearch(search);
+    mutate(posts);
   };
 
   return (
