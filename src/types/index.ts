@@ -17,7 +17,7 @@ export type PostsType = {
 
 export type UsePostsType = {
   posts: PostType[];
-  loading: boolean;
+  isLoading: boolean;
   getPosts: () => Promise<void>;
   getPostBySearch: (value: string) => Promise<void>;
 };

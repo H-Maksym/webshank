@@ -8,16 +8,16 @@ export const usePosts = create<UsePostsType>()(
   devtools(
     (set) => ({
       posts: [],
-      loading: false,
+      isLoading: false,
       getPosts: async () => {
-        set({ loading: true });
+        set({ isLoading: true });
         const posts = await getPosts();
-        set({ posts, loading: false });
+        set({ posts, isLoading: false });
       },
       getPostBySearch: async (search) => {
-        set({ loading: true });
+        set({ isLoading: true });
         const posts = await getPostsBySearch(search);
-        set({ posts, loading: false });
+        set({ posts, isLoading: false });
       },
     }),
     { name: "Posts" }

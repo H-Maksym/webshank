@@ -1,27 +1,33 @@
 "use client";
-import { FC, useEffect } from "react";
+import { FC /* , useEffect  */ } from "react";
 import Link from "next/link";
-import { shallow } from "zustand/shallow";
-import { usePosts } from "@/store";
+import useSWR from "swr";
+// import { shallow } from "zustand/shallow";
+// import { usePosts } from "@/store";
 import { PostType } from "@/types";
 
 import Heading from "@/components/common/Heading";
+import { getPosts } from "@/utils/api";
 
 interface IPostsProps {}
 
 const Posts: FC<IPostsProps> = () => {
-  const [posts, loading, getPosts] = usePosts(
-    (state) => [state.posts, state.loading, state.getPosts],
-    shallow
-  );
+  //INFO Zustand
+  // const [posts, isLoading, getPosts] = usePosts(
+  //   (state) => [state.posts, state.loading, state.getPosts],
+  //   shallow
+  // );
 
-  useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+  // useEffect(() => {
+  //   getPosts();
+  // }, [getPosts]);
+
+  //INFO SWR
+  const { data: posts, isLoading } = useSWR("posts", getPosts);
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <Heading headingLevel="h3">Loading...</Heading>
       ) : (
         <ul className="list-disc card-set flex-col [--card-gap:10px]">
