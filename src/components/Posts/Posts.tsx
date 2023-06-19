@@ -23,7 +23,7 @@ const Posts: FC<IPostsProps> = () => {
   // }, [getPosts]);
 
   //INFO SWR
-  const { data: posts, isLoading } = useSWR("posts", getPosts);
+  const { data: posts, isLoading } = useSWR<PostType[]>("posts", getPosts);
 
   return (
     <>

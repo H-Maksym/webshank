@@ -3,6 +3,7 @@
 import { FC, useState, FormEventHandler } from "react";
 import useSWR from "swr";
 import { getPostsBySearch } from "@/utils/api";
+import { PostType } from "@/types";
 
 interface IPostsSearchProps {}
 
@@ -13,7 +14,7 @@ const PostsSearch: FC<IPostsSearchProps> = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const posts = await getPostsBySearch(search);
+    const posts: PostType[] = await getPostsBySearch(search);
     mutate(posts);
   };
 
