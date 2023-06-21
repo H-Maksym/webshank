@@ -28,6 +28,18 @@ const nextConfig = {
   // assetPrefix: 'http://localhost:3000/',
   //   output: "export",
   // output: 'export',
+  //INFO config for image from remote server
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.googleusercontent.com",
+        port: "",
+        // pathname: "/a/**",
+      },
+    ],
+  },
+
   webpack(config, { dev, isServer }) {
     config.module.rules.push({
       test: /\.svg$/,
