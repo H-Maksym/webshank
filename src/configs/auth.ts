@@ -68,6 +68,7 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
+  //INFO it's need for corect work in versel or other services. In Documentation secret. Default value: string (SHA hash of the "options" object) in development, no default in production. Required: Yes, in production!
   secret: process.env.NEXTAUTH_SECRET,
   //INFO If redirect true, when we have error we redirect to form with autogenerate
   pages: { signIn: "/signin" },
