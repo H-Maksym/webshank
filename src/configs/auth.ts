@@ -68,6 +68,7 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   //INFO If redirect true, when we have error we redirect to form with autogenerate
   pages: { signIn: "/signin" },
 };
