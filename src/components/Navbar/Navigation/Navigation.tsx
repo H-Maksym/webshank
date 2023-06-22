@@ -2,6 +2,8 @@
 import { FC } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
+
 import { NavMenuType } from "@/types";
 
 interface INavigationProps {
@@ -10,6 +12,8 @@ interface INavigationProps {
 
 const Navigation: FC<INavigationProps> = ({ pages }) => {
   const pathname = usePathname();
+  const session = useSession();
+
   return (
     <>
       <ul className="card-set justify-center [--card-gap:10px]">
@@ -26,6 +30,27 @@ const Navigation: FC<INavigationProps> = ({ pages }) => {
             </Link>
           </li>
         ))}
+        {session?.data && (
+          <li className={`card-item custom-link custom-link-hover`}>
+            <Link href="/profile">Profile</Link>
+          </li>
+        )}
+        {session?.data ? (
+          //INFO SignOut and redirect to main page
+          <li className={`card-item custom-link custom-link-hover`}>
+            <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+              Sign Out
+            </Link>
+          </li>
+        ) : (
+          <li className={` card-item custom-link custom-link-hover`}>
+            {/* 
+            //INFO from library custom page
+            <Link href="/api/auth/signin">Sign In</Link> 
+            */}
+            <Link href="/signin">Sign In</Link>
+          </li>
+        )}
       </ul>
     </>
   );
