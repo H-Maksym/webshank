@@ -13,7 +13,6 @@ interface INavigationProps {
 const Navigation: FC<INavigationProps> = ({ pages }) => {
   const pathname = usePathname();
   const session = useSession();
-  console.log(session);
 
   return (
     <>
@@ -45,7 +44,11 @@ const Navigation: FC<INavigationProps> = ({ pages }) => {
           </li>
         ) : (
           <li className={` card-item custom-link custom-link-hover`}>
-            <Link href="/api/auth/signin">Sign In</Link>
+            {/* 
+            //INFO from library custom page
+            <Link href="/api/auth/signin">Sign In</Link> 
+            */}
+            <Link href="/signin">Sign In</Link>
           </li>
         )}
       </ul>
