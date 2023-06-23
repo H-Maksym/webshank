@@ -23,5 +23,10 @@
     "title": "Contacts",
     "href": "/contacts",
     "ariaLabel": "Link to contacts page"
+  },
+  {
+    "title": "Test",
+    "href": "/Test",
+    "ariaLabel": "Link to Test page"
   }
 ]
