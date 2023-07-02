@@ -129,8 +129,8 @@ dist
 .tern-port
 
 .idea
-
-package-lock.json
+# if we don't want deploy on github pages
+# package-lock.json
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend

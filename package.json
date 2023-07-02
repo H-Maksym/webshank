@@ -2,12 +2,21 @@
   "name": "webshank",
   "version": "0.1.0",
   "private": true,
+  "author": "Maksym Holovachuk",
+  "homepage": "https://github.com/H-Maksym/webshank",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-Maksym/webshank.git"
+  },
+  "bugs": {
+    "url": "https://github.com/H-Maksym/webshank"
+  },
   "scripts": {
     "dev": "open-cli http://localhost:3000 && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint src/**/*.{ts,tsx}",
-    "export": "next build && next export"
+    // "export": "next build && next export"
   },
   "dependencies": {
     "@types/node": "20.2.5",
