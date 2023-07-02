@@ -16,7 +16,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint src/**/*.{ts,tsx}",
-    "export": "next build && next export"
+    // "export": "next build && next export"
   },
   "dependencies": {
     "@types/node": "20.2.5",
