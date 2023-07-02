@@ -15,8 +15,7 @@
     "dev": "open-cli http://localhost:3000 && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint src/**/*.{ts,tsx}",
-    // "export": "next build && next export"
+    "lint": "next lint src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "@types/node": "20.2.5",
