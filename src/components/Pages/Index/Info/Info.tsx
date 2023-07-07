@@ -5,7 +5,7 @@ interface IInfoProps {}
 const Info: FC<IInfoProps> = () => {
   return (
     <>
-      <div>Info</div>
+      <div>Info Page</div>
     </>
   );
 };

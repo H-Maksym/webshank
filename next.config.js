@@ -27,7 +27,6 @@ const nextConfig = {
   //INFO for root url site
   // assetPrefix: 'http://localhost:3000/',
   // output: "export",
-  // output: 'export',
   //INFO config for image from remote server
   images: {
     remotePatterns: [
