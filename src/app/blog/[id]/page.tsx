@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
 
