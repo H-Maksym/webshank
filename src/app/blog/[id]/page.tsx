@@ -1,4 +1,4 @@
-// import { Metadata } from "next";
+import { Metadata } from "next";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
 
@@ -16,14 +16,14 @@ interface IBlogIDProps {
 }
 
 //INFO SEO for dynamic page's
-// export const generateMetadata = async ({
-//   params: { id },
-// }: IBlogIDProps): Promise<Metadata> => {
-//   const post: PostType = await getPostById(id);
-//   return {
-//     title: post.title,
-//   };
-// };
+export const generateMetadata = async ({
+  params: { id },
+}: IBlogIDProps): Promise<Metadata> => {
+  const post: PostType = await getPostById(id);
+  return {
+    title: post.title,
+  };
+};
 
 const BlogID = async ({ params: { id } }: IBlogIDProps) => {
   const post: PostType = await getPostById(id);

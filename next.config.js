@@ -26,7 +26,7 @@ const nextConfig = {
   // output: process.env.NODE_ENV === 'production' ? 'standalone' : 'export',
   //INFO for root url site
   // assetPrefix: 'http://localhost:3000/',
-  output: "export",
+  // output: "export",
   //INFO config for image from remote server
   images: {
     remotePatterns: [
